@@ -32,3 +32,24 @@ if 10 in A:
     print(f"Yes")
 else:
     print("Element not present in array")
+print("\n")
+
+## STRINGS ##
+
+# Append at the end of the string
+s = "Hello"
+b = s + "Bro"
+print(b)
+
+# Check if something is in the string
+if "H" in b:
+    print("Present in the string")
+else:
+    print("Not present in the string")
+
+# Access by position
+print(b[2])
+
+# To get the length
+# Time complexity : O(1)
+print(len(b))
