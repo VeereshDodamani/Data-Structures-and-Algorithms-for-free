@@ -15,3 +15,34 @@ def F(n):
         return F(n-1) +F(n-2)
 
 print(F(5))
+
+# Linked list
+
+# Time: O(n)
+# Space: O(n)
+class SinglyNode:
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+
+    def __str__(self):
+        return str(self.val)
+
+
+Head = SinglyNode(1)
+A = SinglyNode(3)
+B = SinglyNode(5)
+C = SinglyNode(2)
+
+Head.next = A
+A.next = B
+B.next = C
+def reverse(node):
+    if not node:
+        return
+    
+    reverse(node.next)
+    print(node)
+
+print("Given linked list in reverse:")
+reverse(Head)
