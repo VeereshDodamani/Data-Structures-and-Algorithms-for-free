@@ -28,3 +28,25 @@ def binary_search(arr, target):
     return(f"Tagret {target} is not there in array")
 
 print(binary_search(arr,target))
+
+
+# Over-under technique
+# Based on condition: All the similar elements are going to be in one side
+# example = [F,F,F,T,T,T]
+
+b = [False,False,False,False,True,True,True]
+def binary_search_condition(arr):
+    n = len(arr)
+    l = 0
+    r = n-1
+
+    while l<r:
+        m = (l+r)//2
+
+        if b[m]:
+            r = m
+        else:
+            l = m+1
+    return l
+
+print(binary_search_condition(b))
