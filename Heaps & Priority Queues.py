@@ -6,6 +6,7 @@
 # Heap-insert or Heap-push: Adding a element, O(log n)
 # Heap-sort: O(n log n)
 
+print("MIN-HEAP")
 # Build min-heap (Heapify)
 # Time: O(n)
 # Space: O(1)
@@ -41,3 +42,34 @@ def heap_sort(arr):
     print(f"Applying heap-sort: {new_list}")
 
 heap_sort(A)
+
+A = [-4,3,1,0,2,5,10,8,12,9]
+# Heap push-pop
+# Time: O(log n)
+heapq.heappushpop(A,99)
+print(f"Applying Heap push-pop: {A}")
+print("\n")
+
+print("MAX-HEAP")
+# Build max-heap (Heapify)
+B = [-3,2,4,0,1,6,11,10,7]
+n = len(B)
+
+for i in range(n):
+    B[i] = -B[i]
+
+heapq.heapify(B)
+print(f"Biggeest value will be treated as smallest value: {B}")
+
+#Insert 5 in B
+heapq.heappush(B, -5)
+print(f"Inserting 5: {B}")
+
+# Building heap from scratch
+print("Building heap from scratch")
+C = [-5, 4, 3, 8, 1, 7]
+heap = []
+
+for i in C:
+    heapq.heappush(heap, i)    
+    print(heap)
