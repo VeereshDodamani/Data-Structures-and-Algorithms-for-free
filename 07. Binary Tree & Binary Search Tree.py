@@ -108,3 +108,37 @@ def search(node, target):
     return search(node.left, target) or search(node.right, target)
 
 print(search(A,10))
+
+# Binary Search Tree (BST)
+A2 = TreeNode(5)
+B2 = TreeNode(1)
+C2 = TreeNode(8)
+D2 = TreeNode(-1)
+E2 = TreeNode(3)
+F2 = TreeNode(7)
+G2 = TreeNode(9)
+
+A2.left, A2.right = B2, C2
+B2.left, B2.right = D2, E2
+C2.left, C2.right = F2, G2
+
+# Can use the same in-order on BST
+print("In-order on Binary Search Tree")
+in_order(A2)
+
+# Time: O(log n)
+# Space: O(log n)
+print("Searching node in BST")
+def search_bst(node, target):
+    if not node:
+        return f"Target {target} not present in BST"
+    
+    if node.val == target:
+        return f"Target {target} present in BST"
+    
+    if target<node.val:
+        return search_bst(node.left, target)
+    if target>node.val:
+        return search_bst(node.right, target)
+
+print(search_bst(A2,10))
