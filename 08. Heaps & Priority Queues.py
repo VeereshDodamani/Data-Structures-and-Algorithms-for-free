@@ -73,3 +73,17 @@ heap = []
 for i in C:
     heapq.heappush(heap, i)    
     print(heap)
+
+
+print("\n")
+# Putting tuples of items in the heap
+print("Putting tuples of items in the heap")
+D = [4,6,4,5,6,7,5,9]
+
+from collections import Counter
+Counter = Counter(D)
+print(Counter)
+
+heap = []
+for k, v in Counter.items():
+    print(f"Key: {k}, Value: {v}")
