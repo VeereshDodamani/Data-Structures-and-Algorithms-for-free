@@ -3,7 +3,7 @@
 # Space: O(1)
 
 A = [-5,4,3,6,-1,-3,0,7]
-print(f"Original array: {A}")
+print(f"Before bubble sort: {A}")
 
 def bubble_sort(arr):
     n = len(arr)
@@ -24,7 +24,7 @@ print("\n")
 # Space: O(1)
 
 B = [-8,0,3,-2,5,-5,0,7]
-print(f"Original array: {A}")
+print(f"Before Insertion sort: {B}")
 
 def insertion_sort(b_arr):
     n = len(b_arr)
@@ -37,4 +37,23 @@ def insertion_sort(b_arr):
         
 insertion_sort(B)
 print(f"After Insertion sort: {B}")
+print("\n")
+
+## Selection sort
+# Time: O(n^2)
+# Space: O(1)
+
+C = [-6,0,2,5,-2,1,9]
+print(f"Before selection sort: {C}")
+def selection_sort(c_arr):
+    n  = len(c_arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i+1,n):
+            if c_arr[j]<c_arr[min_index]:
+                min_index = j
+        c_arr[i], c_arr[min_index] = c_arr[min_index], c_arr[i]
+
+selection_sort(C)
+print(f"After selection sort: {C}")
 print("\n")
