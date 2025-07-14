@@ -3,7 +3,7 @@
 # Space: O(1)
 
 A = [-5,4,3,6,-1,-3,0,7]
-print(f"Before bubble sort: {A}")
+print(f"Before Bubble Sort: {A}")
 
 def bubble_sort(arr):
     n = len(arr)
@@ -16,7 +16,7 @@ def bubble_sort(arr):
                 arr[i-1], arr[i] = arr[i], arr[i-1]
 
 bubble_sort(A)
-print(f"After bubble sort: {A}")
+print(f"After Bubble Sort: {A}")
 print("\n")
 
 ## Insertion sort
@@ -55,7 +55,7 @@ def selection_sort(c_arr):
         c_arr[i], c_arr[min_index] = c_arr[min_index], c_arr[i]
 
 selection_sort(C)
-print(f"After selection sort: {C}")
+print(f"After Selection Sort: {C}")
 print("\n")
 
 ## Merge Sort
@@ -63,7 +63,7 @@ print("\n")
 # Space: O(n)
 
 D = [-5,9,4,-2,7,-3,1,0]
-print(f"Before Merge sort{D}")
+print(f"Before Merge Sort{D}")
 def merge_sort(d_arr):
     n = len(d_arr)
     if n == 1:
@@ -102,8 +102,32 @@ def merge_sort(d_arr):
         r += 1
         i += 1
 
-    print(f"After Merge sort{sorted_arr}")
+    # print(f"After Merge sort{sorted_arr}")
     return sorted_arr
 
-merge_sort(D)
+print(f"After Merge Sort: {merge_sort(D)}")
 print("\n")
+
+
+## Quick Sort
+# Time: O(n log n)
+# Space: O(n)
+
+E = [-3,1,-5,6,-2,4,-9,8]
+print(f"Before Quick Sort: {E}")
+
+def quick_sort(e_arr):
+    n = len(e_arr)
+    if n <= 1:
+        return e_arr
+    
+    p = e_arr[-1]
+    L = [x for x in e_arr[:-1] if x <= p]
+    R = [x for x in e_arr[:-1] if x > p]
+
+    L = quick_sort(L)
+    R = quick_sort(R)
+
+    return L + [p] + R
+
+print(f"After Quick Sort: {quick_sort(E)}")
