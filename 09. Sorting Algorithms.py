@@ -131,3 +131,30 @@ def quick_sort(e_arr):
     return L + [p] + R
 
 print(f"After Quick Sort: {quick_sort(E)}")
+print("\n")
+
+
+## Counting sort
+# Time: O(k+n), k is the range of data
+# Space: O(k)
+
+F = [3,9,4,7,1,5,2,8,6]
+print(f"Before Counting Sort: {F}")
+
+def counting_sort(f_arr):
+    n = len(f_arr)
+    maxx = max(f_arr)
+    count = [0] * (maxx+1)
+    
+    for x in f_arr:
+        count[x] += 1
+    
+    i = 0 
+    for c in range(maxx+1):
+        while count[c] > 0:
+            f_arr[i] = c
+            i += 1
+            count[c] -= 1
+    return f_arr
+
+print(f"After Counting Sort: {counting_sort(F)}")
