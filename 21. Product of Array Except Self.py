@@ -38,3 +38,14 @@ for i in range(len(nums)-1, -1, -1):
     res[i] *= postfix
     postfix *= nums[i]
 print(res)
+
+print("Way-3")
+nums = [1, 2, 3, 4]
+total = 1
+for ele in nums:
+    total *= ele
+
+res = []
+for ele in nums:
+    res.append(total//ele)
+print(res)
