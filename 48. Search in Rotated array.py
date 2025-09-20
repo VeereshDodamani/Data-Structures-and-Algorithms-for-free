@@ -6,14 +6,54 @@
 
 # You must write an algorithm with O(log n) runtime complexity.
 
+# Way-1
+print("Way-1")
 nums = [4,5,6,7,0,1,2]
-target = 0
+target = 3
 i = 0
 
 def find(nums, target, i):
     for i in range(len(nums)):
         if nums[i] == target:
-            return {"Position:",i}
+            return f'Position:{i}'
     return ("Position:-1")
 
 print(find(nums, target, i))
+
+
+# Way-2
+print("Way-2")
+def find2(nums, target):
+    n = len(nums)
+    l = 0
+    r = n-1
+
+    while l<r:
+        m = (l+r) // 2
+        if nums[m] > nums[r]:
+            l = m+1
+        else:
+            r = m
+    
+    min_i = l
+
+    if min_i == 0:
+        l, r = 0, n-1
+    elif target >= nums[0] and target <= nums[min_i-1]:
+        l, r = 0, min_i - 1
+    else:
+        l, r = min_i, n-1
+
+    while l<=r:
+        m = (l+r) // 2
+
+        if nums[m] == target:
+            return f'Position: {m}'
+        elif nums[m] < target:
+            l = m+1
+        else:
+            r = m-1
+
+    return ("Position:-1")
+
+print(find2(nums, target))
