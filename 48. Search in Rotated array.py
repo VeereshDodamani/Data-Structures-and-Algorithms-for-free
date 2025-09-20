@@ -6,14 +6,14 @@
 
 # You must write an algorithm with O(log n) runtime complexity.
 
-nums = [1]
+nums = [4,5,6,7,0,1,2]
 target = 0
 i = 0
 
 def find(nums, target, i):
     for i in range(len(nums)):
         if nums[i] == target:
-            return i
-    return -1
+            return {"Position:",i}
+    return ("Position:-1")
 
 print(find(nums, target, i))
