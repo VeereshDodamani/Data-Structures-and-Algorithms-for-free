@@ -1,3 +1,7 @@
+# Given the head of a singly linked list, return the middle node of the linked list.
+
+# If there are two middle nodes, return the second middle node.
+# Leetcode probelm: 876
 print("Way-1")
 class ListNode:
     def __init__(self, val=0, next=None):
