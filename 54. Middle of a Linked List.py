@@ -2,6 +2,7 @@
 
 # If there are two middle nodes, return the second middle node.
 # Leetcode probelm: 876
+
 print("Way-1")
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -36,3 +37,14 @@ head = array_to_linkedlist([1,2,3,4,5])
 mid = middleNode(head)
 output = linkedlist_to_array(mid)
 print(output)
+
+
+
+print("Way-2")
+def middle_elements(arr):
+    mid = len(arr) // 2
+    return arr[mid:]
+
+head = [1, 2, 3, 4, 5]
+print("Given input: ", head)
+print(middle_elements(head))
