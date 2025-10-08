@@ -1,3 +1,6 @@
+# Given a string s, find the length of the longest substring without duplicate characters.
+# Leetcode problem : 3
+
 def lengthOfLongestSubstring(s):
     l = 0
     longest = 0
