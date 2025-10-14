@@ -35,3 +35,10 @@ print("Given S1: ",s1)
 print("Given S2: ",s2)
 
 print("S1 permutation present in S2: ",checkInclusion(s1,s2))
+
+s1 = "ab"
+s2 = "eidboaoo"
+print("Given S1: ",s1)
+print("Given S2: ",s2)
+
+print("S1 permutation present in S2: ",checkInclusion(s1,s2))
