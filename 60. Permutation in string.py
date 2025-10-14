@@ -1,7 +1,14 @@
+# Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+
+# In other words, return true if one of s1's permutations is the substring of s2.
+
 def checkInclusion(s1, s2):
     n1 = len(s1)
     n2 = len(s2)
 
+    if n1 > n2:
+        return False
+    
     s1_counts = [0]*26
     s2_counts = [0]*26
 
@@ -24,5 +31,7 @@ def checkInclusion(s1, s2):
 
 s1 = "ab"
 s2 = "eidbaooo"
+print("Given S1: ",s1)
+print("Given S2: ",s2)
 
-print(checkInclusion(s1,s2))
+print("S1 permutation present in S2: ",checkInclusion(s1,s2))
