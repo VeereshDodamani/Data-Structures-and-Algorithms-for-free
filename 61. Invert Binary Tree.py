@@ -25,3 +25,17 @@ print("Original tree inorder:", inorder(root))
 
 inverted_root = invertTree(root)
 print("Inverted tree inorder:", inorder(inverted_root))
+
+
+# Leetcode solution
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        
+        root.left, root.right = root.right, root.left
+
+        self.invertTree(root.right)
+        self.invertTree(root.left)
+
+        return root
