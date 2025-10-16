@@ -1,3 +1,7 @@
+# Given the root of a binary tree, invert the tree, and return its root.
+
+# Leetcode problem: 226
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
