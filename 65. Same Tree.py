@@ -2,6 +2,25 @@
 # Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 # Leetcode probelm: 100
 
+# Leetcode solution
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        
+        def balanced(p,q):
+            if not p and not q:
+                return True
+            
+            if (p and not q) or (q and not p):
+                return False
+            
+            if p.val != q.val:
+                return False
+
+            return balanced(p.left, q.left) and balanced(p.right, q.right)
+
+        return balanced(p,q)
+
+# VS Code solution
 class Node:
     def __init__(self, val):
         self.val = val
@@ -25,4 +44,4 @@ q = Node(1)
 q.left = Node(2)
 q.right = Node(3)
 
-print(balanced(p, q))
+print("Given p and q tree are same: ",balanced(p, q))
