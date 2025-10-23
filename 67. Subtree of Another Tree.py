@@ -27,3 +27,21 @@ class Solution:
             return has_subTree(root.left) or has_subTree(root.right)
         
         return has_subTree(root)
+# VS Code solution
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val, self.left, self.right = val, left, right
+
+def same(a, b):
+    if not a and not b: return True
+    if not a or not b or a.val != b.val: return False
+    return same(a.left, b.left) and same(a.right, b.right)
+
+def isSubtree(r, s):
+    if not r: return False
+    return same(r, s) or isSubtree(r.left, s) or isSubtree(r.right, s)
+
+root = TreeNode(3, TreeNode(4, TreeNode(1), TreeNode(2)), TreeNode(5))
+subRoot = TreeNode(4, TreeNode(1), TreeNode(2))
+
+print(isSubtree(root, subRoot))
