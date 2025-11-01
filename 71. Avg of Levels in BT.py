@@ -49,3 +49,29 @@ class Solution:
             avgs.append(avg)
             avg = 0
         return avgs
+    
+# WAY 3
+from collections import deque
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        if root is None:
+            return []
+
+        avgs = []
+        q = deque([root])
+
+        while q:
+            avg = 0
+            n = len(q)
+            avg /= n
+            for _ in range(n):
+                node = q.popleft()
+                avg += node.val
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            avgs.append(avg)
+        return avgs
