@@ -6,7 +6,7 @@ from collections import deque
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         avgs = []
-        q = deque([root])  # No check if root is None
+        q = deque([root])
 
         while q:
             total = 0
@@ -21,4 +21,31 @@ class Solution:
                     q.append(node.right)
 
             avgs.append(total / n)
+        return avgs
+    
+#WAY 2
+from collections import deque
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        if root is None:
+            return []
+
+        avgs = []
+        q = deque([root])
+        avg = 0
+
+        while q:
+            n = len(q)
+            for _ in range(n):
+                node = q.popleft()
+                avg += node.val
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            avg /= n
+            avgs.append(avg)
+            avg = 0
         return avgs
