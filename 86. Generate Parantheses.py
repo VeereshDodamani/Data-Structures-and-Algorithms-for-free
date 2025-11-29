@@ -1,3 +1,6 @@
+# Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+# Leetcode probelm: 22
+
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans, sol = [], []
